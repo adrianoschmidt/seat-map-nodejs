@@ -1,15 +1,20 @@
 var express = require('express');
 var app = express();
 
-var students = [
-  { value : '0', name : "Adriano da Silva"},
-  { value : '1', name : "Carlos Oliveira"},
-  { value : '2', name : "Renata Silveira"},
-  { value : '3', name : "Suzana Carvalho"}
+var seats = [
+  { column : '1', row : '1', studentId: "01", name : "Jorge Pereira"},
+  { column : '1', row : '2', studentId: "02", name : "Carlos Oliveira"},
+  { column : '1', row : '3', studentId: "03", name : "Renata Silveira"},
+  { column : '2', row : '1', studentId: "04", name : "Marcio Silva"},
+  { column : '2', row : '2', studentId: "05", name : "Joaquim da Costa"},
+  { column : '2', row : '3', studentId: "06", name : "Flavia Souza"},
+  { column : '3', row : '1', studentId: "07", name : "Suzana Carvalho"},
+  { column : '3', row : '2', studentId: "08", name : "Rosangela Pereira"},
+  { column : '3', row : '3', studentId: "09", name : "Renata Luz"},
 ];
 
-app.get('/seat-map/api/student', function (req, res) {
-  res.json(students);
+app.get('/seat-map/api/seat', function (req, res) {
+  res.json(seats);
 });
 
 var server = app.listen(8080, function () {
